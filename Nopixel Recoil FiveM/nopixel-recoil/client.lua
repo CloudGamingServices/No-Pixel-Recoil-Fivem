@@ -27,8 +27,8 @@ Citizen.CreateThread( function()
 
 	        local cameraDistance = #(GetGameplayCamCoord() - GetEntityCoords(ply))
 
-	        local recoil = math.random(130,140+(math.ceil(MovementSpeed*1.5)))/100
-	        local rifle = false
+	        local recoil = math.random(1300,1400+(math.ceil(MovementSpeed*100.5)))/100
+	        local rifle = true
 
 
           	if group == 970310034 or group == 1159398588 then
@@ -50,12 +50,12 @@ Citizen.CreateThread( function()
 	        if Vehicled then
 	        	recoil = recoil + (recoil * cameraDistance)
 	        else
-	        	recoil = recoil * 1.0
+	        	recoil = recoil * 5.0
 	        end
 
 	        if GamePlayCam == 4 then
 
-	        	recoil = recoil * 0.6
+	        	recoil = recoil * 1.6
 		        if rifle then
 		        	recoil = recoil * 0.1
 		        end
@@ -82,7 +82,7 @@ Citizen.CreateThread( function()
         
 	        local set = p+recoil
 
-	       	SetGameplayCamRelativePitch(set,0.8)    	       	
+	       	SetGameplayCamRelativePitch(set,1.8)    	       	
 
 	       	
 	      -- 	print(GetGameplayCamRelativePitch())
